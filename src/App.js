@@ -1,8 +1,20 @@
+import { Route, Switch } from 'react-router-dom';
+
+import { HomePage } from './views/HomePage/index';
+import { Login } from './views/Login/index';
+
+import { GlobalStyle } from './styles/global';
+
 function App() {
   return (
-    <div className="App">
-      <h1>Olá mundo</h1>
-    </div>
+    <>
+      <Switch>
+        <Route exact path = "/" component={HomePage} />
+        <Route exact path = "/entrar" component={Login} />
+      </Switch>
+
+      <GlobalStyle />
+    </>
   );
 }
 
