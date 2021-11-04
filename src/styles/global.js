@@ -5,6 +5,7 @@ export const GlobalStyle = createGlobalStyle`
         --background: #f0f2f5;
         
         --blue-light: #6933ff;
+        --blue-light2: #9933ff;
 
         --text-title: #363f5f;
         --text-body: #969cb3;
@@ -25,6 +26,10 @@ export const GlobalStyle = createGlobalStyle`
         @media (max-width: 720px) {
             font-size: 87.5%;
         }
+    }
+
+    html {
+        scroll-behavior: smooth;
     }
 
     body {
