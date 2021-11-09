@@ -12,9 +12,9 @@ export function HomePage() {
             <div style={MainTitle}>
                 <HeaderContent>
                     <h2>
-                        O maior acervo de estilos de cervejas, lúpulos e 
-                        leveduras, além de calculadoras específicas para o seu 
-                        negócio no ramo da cervejaria.
+                        O maior e mais completo acervo de estilos de cervejas
+                        do Brasil, com informações técnicas para o seu negócio
+                        e as melhores dicas para melhor servir a sua bebida.
                     </h2>
                     <a href="#start">Explorar</a>
                 </HeaderContent>
