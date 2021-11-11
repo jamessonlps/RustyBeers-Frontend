@@ -1,13 +1,17 @@
 import { Link } from "react-router-dom";
 
+import LogoIamge from '../../assets/logo.png';
 import { NavContainer } from "./styles";
 
 export function Navbar() {
     return (
         <NavContainer>
-            <Link style={LinkStyle}>Página inicial</Link>
-            <Link style={LinkStyle}>Bebidas</Link>
-            <Link style={LinkStyle}>Entrar</Link>
+            <Link className="logo-div" to="/" style={LinkStyle}>
+                <img src={LogoIamge} alt="logo" />
+                <p>Rusty Beers</p>
+            </Link>
+            <Link to="/beers" style={LinkStyle}>Beers</Link>
+            <Link style={LinkStyle}>Login | Sign In</Link>
         </NavContainer>
     );
 }

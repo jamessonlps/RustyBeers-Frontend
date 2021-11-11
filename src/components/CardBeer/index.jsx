@@ -20,9 +20,9 @@ export function CardBeer(props) {
             
             <Link 
                 to={{
-                    pathname: `cervejas/${props.info.id}`, 
+                    pathname: `beers/${props.info.id}`, 
                     state: {...props.info}
-                }}>Ver mais
+                }}>See more
             </Link>
 
         </Container>
