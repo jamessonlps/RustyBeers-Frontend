@@ -5,35 +5,35 @@ export function DetailsTable(props) {
         <Table>
             <tr>
                 <th>Alcohol by Volume</th>
-                <td>{props.data.abv}</td>
+                <td>{props.data.abv || "---"}</td>
             </tr>
             <tr>
                 <th>International Bitterness Units</th>
-                <td>{props.data.ibu}</td>
+                <td>{props.data.ibu || "---"}</td>
             </tr>
             <tr>
                 <th>Final Gravity</th>
-                <td>{props.data.target_fg}</td>
+                <td>{props.data.target_fg || "---"}</td>
             </tr>
             <tr>
                 <th>Original Gravity</th>
-                <td>{props.data.target_og}</td>
+                <td>{props.data.target_og || "---"}</td>
             </tr>
             <tr>
                 <th>Color Units Ebc </th>
-                <td>{props.data.ebc}</td>
+                <td>{props.data.ebc || "---"}</td>
             </tr>
             <tr>
                 <th>SRM (Standard Reference Method)</th>
-                <td>{props.data.srm}</td>
+                <td>{props.data.srm || "---"}</td>
             </tr>
             <tr>
                 <th>ph</th>
-                <td>{props.data.ph}</td>
+                <td>{props.data.ph || "No data"}</td>
             </tr>
             <tr>
                 <th>Attenuation Level</th>
-                <td>{props.data.attenuation_level}</td>
+                <td>{props.data.attenuation_level || "No data"}</td>
             </tr>
             <tr>
                 <th>Volume</th>
