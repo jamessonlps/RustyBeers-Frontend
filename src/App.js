@@ -5,6 +5,7 @@ import { HomePage } from './views/HomePage/index';
 import { Login } from './views/Login/index';
 import { BeersList } from './views/BeersList';
 import { BeerView } from './views/BeerView';
+import { Loading } from './components/Loading';
 
 import { GlobalStyle } from './styles/global';
 
@@ -17,6 +18,7 @@ function App() {
         <Route exact path = "/entrar" component={Login} />
         <Route exact path = "/cervejas" component={BeersList} />
         <Route path = "/cervejas/:id" component={BeerView} />
+        <Route path = "/loading" component={Loading} />
       </Switch>
 
       <GlobalStyle />

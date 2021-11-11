@@ -36,27 +36,41 @@ export const ImageTitleContainer = styled.div`
     justify-content: space-evenly;
     flex-wrap: wrap;
 
+    background: white;
+    border-radius: 0.3rem;
+    
     width: 100%;
-    margin-top: 5rem;
+    margin-top: 3rem;
+    padding: 4rem 0;
 
     div {
         display: flex;
         flex-direction: column;
-        justify-content: space-evenly;
+        justify-content: center;
+        width: 70%;
     }
 
     h1 {
-        font-size: 3rem;
+        font-size: 2.5rem;
+        align-self: center;
+    }
+
+    hr {
+        align-self: center;
+        color: lightgray;
+        margin-bottom: 2rem;
     }
 
     p {
+        margin: 0.6rem 0;
+
         &.tagline {
-            font-size: 2rem;
+            font-size: 1.6rem;
             font-style: italic;
         }
 
         &.brewed {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
         }
     }
 `
@@ -102,22 +116,23 @@ export const DetailsContainer = styled.div`
 
     }
 
-    table {
-        width: 100%;
-        border-spacing: 0.1rem 0.1rem;
-        margin: 1rem 0;
-        border-radius: 0.3rem;
+    ul {
+        list-style-type: none;
+        li {
+            padding: 0.2rem 0;
+        }
     }
-    
-    th {
-        text-align: left;
-        padding: 0.6rem 1rem;
-        background: white;
-        width: 18rem;
+
+    p {
+        &.topic {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin: 0.7rem 0 0.5rem 0;
+        }
+        &.items {
+            font-size: 1.2rem;
+            padding: 0.5rem 0;
+        }
     }
-    
-    td {
-        background: white;
-        padding: 0.6rem 1rem;
-    }
+
 `

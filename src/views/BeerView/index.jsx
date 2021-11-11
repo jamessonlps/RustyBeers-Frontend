@@ -12,10 +12,11 @@ export function BeerView({ location }) {
                 <img src={data.image_url} width="128px" />
                 <div>
                     <h1>{data.name}</h1>
+                    <hr width="90%" />
                     <p className="tagline">"{data.tagline}"</p>
                     <p className="brewed">First brewed: {data.first_brewed}</p>
-
-                    <a>Adicionar aos favoritos</a>
+                    <p>{data.description}</p>
+                    <a>Add to favorites</a>
                 </div>
             </ImageTitleContainer>
 
@@ -40,30 +41,40 @@ export function BeerView({ location }) {
 
                 {optionToView === 0 ? (
                     <div className="details">
-                        <h2>Decription</h2>
-                        <p>{data.description}</p>
-
-                        <DetailsTable data={data} />
-
                         <h2>Brewer tips</h2>
                         <p>{data.brewers_tips}</p>
-
+                        <DetailsTable data={data} />
                     </div>
                 ) : optionToView === 1 ? (
-                    <h2>Ingredients</h2>
-                ) : (
-                    <h2>Detalhes</h2>
-                )}
+                    <div className="details">
+                        <h2>Ingredients</h2>
+                        <p className="topic">Malts</p>
+                        <ul>
+                            {data.ingredients.malt.map(item => (
+                                <li>&#129372; {item.name}: {item.amount.value} {item.amount.unit}</li>
+                            ))}
+                        </ul>
 
-                
-                
+                        <p className="topic">Hops</p>
+                        <ul>
+                            {data.ingredients.hops.map(item => (
+                                <li>&#127807; {item.name}: {item.amount.value} {item.amount.unit}, addition in the {item.add}, its attribute is the {item.attribute}</li>
+                            ))}
+                        </ul>
+
+                        <p className="topic">Yeast</p>
+                        <p>{data.ingredients.yeast}</p>
+                    </div>
+                ) : (
+                    <div className="details">
+                        <h2>Food pairing</h2>
+                        {data.food_pairing.map(item => (
+                            <p className="items">&#127860; {item}</p>
+                        ))}
+                    </div>
+                )}
             </DetailsContainer>
 
-            {/* <p>volume: {data.volume}</p>
-            <p>boil_volume: {data.boil_volume}</p>
-            <p>method: {data.method}</p>
-            <p>ingredients: {data.ingredients}</p>
-            <p>food_pairing: {data.food_pairing}</p> */}
         </Container>
     )
 }
