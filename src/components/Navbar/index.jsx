@@ -11,7 +11,7 @@ export function Navbar() {
                 <p>Rusty Beers</p>
             </Link>
             <Link to="/beers" style={LinkStyle}>Beers</Link>
-            <Link style={LinkStyle}>Login | Sign In</Link>
+            <Link to="/login" style={LinkStyle}>Login | Sign In</Link>
         </NavContainer>
     );
 }
