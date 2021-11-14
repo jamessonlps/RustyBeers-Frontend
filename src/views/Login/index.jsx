@@ -1,8 +1,9 @@
 import { useState } from "react";
-import { Redirect } from "react-router";
+import { Redirect, useHistory } from "react-router";
 import { useUser } from "../../hooks/useContextUser";
-import { Container } from "./styles";
+import { Container, FormContainer } from "./styles";
 import { loggin } from "../../services/api";
+import { Link } from "react-router-dom";
 
 
 export function Login() {
@@ -13,6 +14,7 @@ export function Login() {
   const [loading, setLoading] = useState(false);
 
   const { setUserData, logged, setLogged } = useUser();
+  const history = useHistory();
 
   if (logged === true) {
     return (<Redirect to="/" />);
@@ -22,38 +24,65 @@ export function Login() {
     event.preventDefault();
     setLoading(true);
     setMsg('');
-    
+
+    if (email === '' || password === '') {
+      setMsg('Fields cannot be empty');
+      setLoading(false);
+      return;
+    }
+
     let logginResponse = await loggin(email, password)
       .then(response => response)
       .catch((err) => {
         setMsg("An error has occurred. Please try again");
+        setLoading(false);
+        return;
       });
 
     setLoading(false);
 
     if (logginResponse === 'incorrect password' || logginResponse === 'user does not exist') {
-      setMsg(logginResponse);
+      setMsg('Please check your information and try again');
+      setLoading(false);
     }
     else {
-      // window.localStorage.setItem('user', JSON.stringify(logginResponse));
-      // console.log("TUDO CERTINHO");
+      window.localStorage.setItem('rusty-beers/userData', JSON.stringify(logginResponse));
+      setUserData(logginResponse);
       setUserData(logginResponse);
       setLogged(true);
+      
+      history.push('/');
     }
   }
 
 
   return (
     <Container>
-      <h1>Página de Login</h1>
-      <form>
-        <input type="text" placeholder="Email" onChange={e => setEmail(e.target.value)} />
-        <input type="text" placeholder="Password"  onChange={e => setPassword(e.target.value)} />
+      <FormContainer>
+        <h1>Sign-In</h1>
+
+        <input 
+          type="text" 
+          placeholder="Email" 
+          onChange={e => setEmail(e.target.value)} 
+        />
+        
+        <input 
+          type="password" 
+          placeholder="Password"  
+          onChange={e => setPassword(e.target.value)} 
+        />
 
         {msg ? <p>{msg}</p> : null}
 
-        <button type="submit" onClick={handleLogin}>Loggin</button>
-      </form>
+        <button 
+          disabled={loading === true}
+          type="submit" 
+          onClick={handleLogin}>
+            Continue
+        </button>
+      </FormContainer>
+      <Link to="/register" >Don't have an account? Register here</Link>
     </Container>
   )
 }

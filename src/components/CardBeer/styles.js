@@ -20,7 +20,7 @@ export const Container = styled.div`
         font-size: 1.2rem;
     }
 
-    a {
+    a, button {
         text-decoration: none;
         align-self: center;
 

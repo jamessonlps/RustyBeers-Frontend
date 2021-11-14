@@ -1,10 +1,35 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useUser } from '../../hooks/useContextUser';
 import { DetailsTable } from "../../components/DetailsTable";
+import { addToFavorites } from "../../services/api";
 import { Container, DetailsContainer, ImageTitleContainer } from "./styles";
 
 export function BeerView({ location }) {
     const data = location.state;
     const [optionToView, setOptionToView] = useState(0);
+    const [loading, setLoading] = useState(false);
+
+    const { userData, setUserData, logged } = useUser();
+
+    async function handleAddToFavorites(event) {
+        event.preventDefault();
+        setLoading(true);
+
+        console.log(userData);
+
+        await addToFavorites(data.id, userData.email)
+            .then((res) => {
+                if (userData.email) {
+                    alert(res);
+                }
+                else {
+                    alert('You must be logged');
+                }
+            })
+            .catch((err) => {
+                alert(err.message);
+            });
+    }
 
     return (
         <Container>
@@ -16,7 +41,7 @@ export function BeerView({ location }) {
                     <p className="tagline">"{data.tagline}"</p>
                     <p className="brewed">First brewed: {data.first_brewed}</p>
                     <p>{data.description}</p>
-                    <a>Add to favorites</a>
+                    <a onClick={handleAddToFavorites}>Add to favorites</a>
                 </div>
             </ImageTitleContainer>
 

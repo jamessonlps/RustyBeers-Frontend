@@ -13,7 +13,7 @@ export const NavContainer = styled.nav`
     background: var(--blue-light);
 
     a {
-        font-size: 1.3rem;
+        font-size: 1.1rem;
         font-weight: 500;
 
         &.logo-div {
@@ -22,10 +22,18 @@ export const NavContainer = styled.nav`
             align-items: center;
 
             p {
-                font-size: 1.5rem;
+                font-size: 1.3rem;
                 font-weight: 600;
                 padding-left: 0.5rem;
             }
         }
+    }
+
+    button {
+        border: none;
+        background: none;
+        color: white;
+        font-weight: 500;
+        font-size: 1.1rem;
     }
 `
