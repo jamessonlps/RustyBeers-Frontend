@@ -3,28 +3,17 @@ import styled from "styled-components";
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: calc(100vh - 7rem);
   width: 100%;
-
-  a {
-    text-decoration: none;
-    margin-top: 0.5rem;
-    color: var(--main-orange);
-    transition: 0.2s;
-
-    &:hover {
-      color: var(--main-red);
-    }
-  }
 `
 
-export const FormContainer = styled.form`
+export const FormCalculator = styled.form`
   display: flex;
   flex-direction: column;
-  width: 30rem;
+  justify-content: center;
+  align-self: center;
 
+  width: 30rem;
+  margin-top: 3rem;
   padding: 2rem;
 
   background: white;
@@ -32,8 +21,13 @@ export const FormContainer = styled.form`
   border-radius: 0.3rem;
 
   h1 {
-    text-align: center;
+    align-self: center;
+    margin-bottom: 1rem;
     color: var(--main-red);
+  }
+
+  label {
+    color: var(--text-body);
   }
 
   input {
@@ -45,8 +39,7 @@ export const FormContainer = styled.form`
     margin: 1rem 0;
   }
 
-  p {
-    align-self: center;
-    color: red;
+  button {
+    margin-bottom: 1.5rem;
   }
 `

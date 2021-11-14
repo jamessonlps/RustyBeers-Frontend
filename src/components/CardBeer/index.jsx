@@ -3,23 +3,26 @@ import { Link } from "react-router-dom";
 import { useHistory } from "react-router";
 import { useUser } from '../../hooks/useContextUser';
 import { removeFromFavorites } from "../../services/api";
-import { Container, HeaderCard } from "./styles";
+import { ButtonsContainer, Container, HeaderCard } from "./styles";
+import BeerDefaultImage from '../../assets/default.png';
+import DeleteImage from '../../assets/trash.png';
 
 export function CardBeer(props) {
     const path = window.location.pathname;
-    const [loading, setLoading] = useState(false);
+    const [loadingRemove, setLoadingRemove] = useState(false);
     const { userData } = useUser();
 
     const history = useHistory();
 
     async function handleRemoveBeer(event) {
         event.preventDefault();
-        setLoading(true);
+        setLoadingRemove(true);
 
         await removeFromFavorites(props.info.id, userData.email)
             .then((res) => {
                 // tratar o tipo de resposta (sucesso ou falha)
                 alert('Beer successfully removed');
+                setLoadingRemove(false);
                 history.push('/beers');
             })
             .catch((err) => alert('some error ocurred'));
@@ -29,7 +32,12 @@ export function CardBeer(props) {
         <Container>
             <h3>{props.info.name}</h3>
             <HeaderCard>
-                <img src={props.info.image_url} width='32px' alt="beer"/>
+                {props.info.image_url ? (
+                    <img src={props.info.image_url} width='32px' alt="beer"/>
+                ) : (
+                    <img src={BeerDefaultImage} height='64px' alt="beer"/>
+                )}
+                
                 <div>
                     <p>"{props.info.tagline}"</p>
                 </div>
@@ -42,7 +50,7 @@ export function CardBeer(props) {
             <p className="description" >{props.info.description}</p>
             
             {path === '/favorites' ? (
-                <div>
+                <ButtonsContainer>
                     <Link 
                         to={{
                             pathname: `beers/${props.info.id}`, 
@@ -50,11 +58,12 @@ export function CardBeer(props) {
                         }}>See more
                     </Link>
                     <button 
+                        disabled={loadingRemove === true}
                         type="submit" 
                         onClick={handleRemoveBeer}>
-                            Remove from favorites
+                            <img src={DeleteImage} height="32px" />
                     </button>
-                </div>
+                </ButtonsContainer>
             ) : (
                 <Link 
                     to={{

@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
+import { Redirect } from "react-router";
 import { useUser } from '../../hooks/useContextUser';
 import { getBeersByIds, getFavoritesBeers } from "../../services/api";
-import { Container } from "./styles";
 import { CardBeer } from '../../components/CardBeer/index';
-import { Redirect } from "react-router";
+import { Loading } from '../../components/Loading/index';
+import { BeersContainer, Container } from "./styles";
 
 export function UserFavorites() {
   const [beers, setBeers]       = useState([]);
@@ -21,12 +22,12 @@ export function UserFavorites() {
             setLoading(false);
           })
           .catch(() => {
-            setMsg('error loading drinks');
+            setMsg('Error loading drinks');
             setLoading(false);
           });
       })
       .catch((err) => {
-        setMsg('error identifying drinks');
+        setMsg('Error identifying drinks');
         setLoading(false);
       });
   }, []);
@@ -45,17 +46,27 @@ export function UserFavorites() {
     );
   }
 
-  return (
-    <Container>
-      <h1>My favorites beers</h1>
+  if (loading) {
+    return (
+      <Loading />
+    );
+  } 
+  else {
+    return (
+      <Container>
+        <h1>My favorite beers</h1>
 
-      {msg ? <p>{msg}</p> : null}
+        {msg ? <p>{msg}</p> : null}
 
-      {beers.length === 0 ? <span>Your favorites list is empty &#128532;</span> : null}
+        {beers.length === 0 ? <span>Your favorites list is empty &#128532;</span> : null}
 
-      {beers.map((item) => (
-        <CardBeer info={item} beers={beers} setBeers={setBeers} ></CardBeer>
-      ))}
-    </Container>
-  );
+        <BeersContainer>
+          {beers.map((item) => (
+            <CardBeer info={item} beers={beers} setBeers={setBeers} ></CardBeer>
+          ))}
+        </BeersContainer>
+
+      </Container>
+    );
+  }
 }

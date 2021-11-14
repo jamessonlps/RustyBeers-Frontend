@@ -26,11 +26,12 @@ export function Navbar() {
                 <p>Rusty Beers</p>
             </Link>
             <Link to="/beers" style={LinkStyle}>Beers</Link>
+            <Link to="/calculator" style={LinkStyle}>Cal. calculator</Link>
 
             {logged ? (<Link style={LinkStyle} to="/favorites">Favorites</Link>) : null}
 
             {logged ? (
-                <button onClick={loggout}>Loggout</button>
+                <a onClick={loggout}>Loggout</a>
             ) 
             : (
                 <Link to="/login" style={LinkStyle}>Login | Sign In</Link>

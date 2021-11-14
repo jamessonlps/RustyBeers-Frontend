@@ -39,9 +39,9 @@ export function BeerView({ location }) {
                     <h1>{data.name}</h1>
                     <hr width="90%" />
                     <p className="tagline">"{data.tagline}"</p>
-                    <p className="brewed">First brewed: {data.first_brewed}</p>
                     <p>{data.description}</p>
-                    <a onClick={handleAddToFavorites}>Add to favorites</a>
+                    <p className="brewed">First brewed: {data.first_brewed}</p>
+                    <button type="submit" onClick={handleAddToFavorites}>Add to favorites</button>
                 </div>
             </ImageTitleContainer>
 

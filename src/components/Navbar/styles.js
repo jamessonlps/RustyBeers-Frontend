@@ -6,15 +6,20 @@ export const NavContainer = styled.nav`
     justify-content: space-between;
     align-items: center;
 
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+
     width: 100%;
     height: 6rem;
     padding: 0 1rem;
 
-    background: var(--blue-light);
+    background: var(--main-red);
 
     a {
         font-size: 1.1rem;
         font-weight: 500;
+        color: white;
 
         &.logo-div {
             display: flex;

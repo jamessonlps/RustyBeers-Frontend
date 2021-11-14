@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import { Navbar } from './components/Navbar';
@@ -6,11 +7,11 @@ import { Login } from './views/Login/index';
 import { BeersList } from './views/BeersList';
 import { BeerView } from './views/BeerView';
 import { RegisterUser } from './views/RegisterUser';
-
-import { GlobalStyle } from './styles/global';
-import { useEffect } from 'react';
-import { useUser } from './hooks/useContextUser';
 import { UserFavorites } from './views/UserFavorites';
+import { CaloriesCalculator } from './views/CaloriesCalculator';
+
+import { useUser } from './hooks/useContextUser';
+import { GlobalStyle } from './styles/global';
 
 function App() {
 
@@ -36,6 +37,7 @@ function App() {
         <Route exact path = "/login" component={Login} />
         <Route exact path = "/register" component={RegisterUser} />
         <Route exact path = "/favorites" component={UserFavorites} />
+        <Route exact path = "/calculator" component={CaloriesCalculator} />
         <Route exact path = "/beers" component={BeersList} />
         <Route path = "/beers/:id" component={BeerView} />
       </Switch>

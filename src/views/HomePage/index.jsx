@@ -1,59 +1,83 @@
-import { Container, CardsSectionContainer, CalculatorContainer, HeaderContent } from './styles';
-import { CardSection } from '../../components/CardSection';
+import { Container, CardsSectionContainer, CalculatorContainer, HeaderContent, CardsSectionContent, Card, CalculatorSectionContainer, CalculatorContent } from './styles';
 
 import BackgroundImage from '../../assets/background.jpg';
 import CalculatorImage from '../../assets/cerveja-calculadora.jpg';
+import BeersImage from '../../assets/beers.jpg';
 
 import { optionsListHome } from '../../data/Descriptions';
+import { Link } from 'react-router-dom';
 
 export function HomePage() {
     return (
         <Container>
-            <div style={MainTitle}>
+            <section style={MainTitle}>
                 <HeaderContent>
                     <h2>
-                        O maior e mais completo acervo de estilos de cervejas
-                        do Brasil, com informações técnicas para o seu negócio
-                        e as melhores dicas para melhor servir a sua bebida.
+                        The largest and most complete collection of beer styles on the 
+                        Internet, with technical information for your business and 
+                        the best tips to better serve your drink.
                     </h2>
-                    <a href="#start">Explorar</a>
+                    <a href="#start">Explore</a>
                 </HeaderContent>
-            </div>
-
-            <h1 id="start">Confira as nossas seções</h1>
+            </section>
 
             <CardsSectionContainer>
-                {optionsListHome.map((item, index) => { return (
-                    <CardSection 
-                        title={item.title} 
-                        description={item.description} 
-                        to={item.to}
-                        urlImage={item.urlImage}
-                    />
-                ) })}
+                <h1 id="start">Our content</h1>
+                <hr />
+                <CardsSectionContent>
+                    <div>
+                        <Card>
+                            <h2>Brewer's Tips</h2>
+                            <p>
+                                Discover the best tips for each of the beers so you can 
+                                prepare and serve them with an incredible experience.
+                            </p>
+                        </Card>
+                        <Card>
+                            <h2>Ingredients</h2>
+                            <p>
+                                Discover the ingredients needed to brew your ideal 
+                                beer, from the malts, hops and yeast needed to brew it.
+                            </p>
+                        </Card>
+                        <Card>
+                            <h2>Food pairing</h2>
+                            <p>
+                                Know which foods each drink is best suited to, and serve 
+                                the beer that best suits each circumstance.
+                            </p>
+                        </Card>
+                    </div>
+
+                    <div>
+                        <img src={BeersImage} alt="beers" />
+                        <Link to="/beers">See more</Link>
+                    </div>
+                </CardsSectionContent>
             </CardsSectionContainer>
 
-            <div className="title-calculator">
-                <h1>Nossa calculadora</h1>
-            </div>
             
-            <CalculatorContainer>
-                <div>
-                    <img src={CalculatorImage} alt="calculadora" typeof="image/jpg" width={500} />
-                </div>
-                <div className="text-calculator-container">
-                    <h2>
-                        A melhor ferramenta para ajudar você no seu bar ou na sua indústria:
-                    </h2>
-                    <ul>
-                        <li>&#127867; Calcular álcool por volume</li>
-                        <li>&#127867; Calcular gravidade final</li>
-                        <li>&#127867; Calcular número de garrafas</li>
-                    </ul>
+            <CalculatorSectionContainer>
+                <h1>Calorie calculator</h1>
+                <hr />
+                <CalculatorContent>
+                    <div>
+                        <img src={CalculatorImage} alt="calculadora" typeof="image/jpg" width={500} />
+                    </div>
+                    <div className="text-calculator-container">
+                        <h2>
+                            A melhor ferramenta para ajudar você no seu bar ou na sua indústria:
+                        </h2>
+                        <ul>
+                            <li>&#127867; Calcular álcool por volume</li>
+                            <li>&#127867; Calcular gravidade final</li>
+                            <li>&#127867; Calcular número de garrafas</li>
+                        </ul>
 
-                    <button>Calcular agora</button>
-                </div>
-            </CalculatorContainer>
+                        <button>Calcular agora</button>
+                    </div>
+                </CalculatorContent>
+            </CalculatorSectionContainer>
         </Container>
     );
 }

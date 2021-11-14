@@ -20,7 +20,7 @@ export const Container = styled.div`
     }
 
     p {
-        color: var(--blue-light);
+        color: var(--main-orange);
         font-size: 1.3rem;
         font-weight: 600;
     }

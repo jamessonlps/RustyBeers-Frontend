@@ -17,28 +17,28 @@ export const Container = styled.div`
 
     h3 {
         text-align: center;
-        font-size: 1.2rem;
+        font-size: 1.3rem;
+        color: var(--main-red);
     }
 
-    a, button {
+    a {
         text-decoration: none;
         align-self: center;
 
         font-size: 1rem;
         font-weight: 600;
-        background: var(--blue-light);
-        color: white;
+        border: 1px solid var(--main-orange);
+        border-radius: 0.3rem;
+        color: var(--main-orange);
 
         margin-top: 2rem;
         padding: 0.5rem 1.5rem;
 
-        border: none;
-        border-radius: 0.3rem;
-
         transition: 0.2s;
 
         &:hover {
-            background: var(--blue-light2);
+            background: var(--main-orange);
+            color: white;
             cursor: pointer;
         }
     }
@@ -48,6 +48,7 @@ export const Container = styled.div`
         
         &.description {
             font-weight: 400;
+            color: var(--text-body);
             overflow: hidden;
             text-overflow: ellipsis;
             display: -webkit-box;
@@ -72,6 +73,30 @@ export const HeaderCard = styled.div`
             text-align: center;
             font-size: 1.1rem;
             font-style: italic;
+        }
+    }
+`
+
+export const ButtonsContainer = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    a {
+        margin-top: 0;
+    }
+
+    button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        margin: 0;
+        padding: 0;
+        border: none;
+        
+        &:hover {
+            background: none;
         }
     }
 `

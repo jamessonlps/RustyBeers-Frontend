@@ -5,29 +5,6 @@ export const Container = styled.div`
     flex-direction: column;
     width: 80%;
     margin: 0 auto;
-
-    a {
-        text-decoration: none;
-        align-self: center;
-
-        font-size: 1.2rem;
-        font-weight: 600;
-        background: var(--blue-light);
-        color: white;
-
-        margin-top: 2rem;
-        padding: 0.5rem 2rem;
-
-        border: none;
-        border-radius: 0.3rem;
-
-        transition: 0.2s;
-
-        &:hover {
-            background: var(--blue-light2);
-            cursor: pointer;
-        }
-    }
 `
 
 export const ImageTitleContainer = styled.div`
@@ -51,8 +28,9 @@ export const ImageTitleContainer = styled.div`
     }
 
     h1 {
-        font-size: 2.5rem;
+        font-size: 3rem;
         align-self: center;
+        color: var(--main-red);
     }
 
     hr {
@@ -67,11 +45,16 @@ export const ImageTitleContainer = styled.div`
         &.tagline {
             font-size: 1.6rem;
             font-style: italic;
+            color: var(--text-body);
         }
 
         &.brewed {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
         }
+    }
+
+    button {
+        align-self: center;
     }
 `
 
@@ -81,29 +64,16 @@ export const DetailsContainer = styled.div`
     margin: 3rem 0;
     border-radius: 0.3rem;
 
-    background: #9933ff44;
+    background: #f36e3733;
 
     div {
         display: flex;
         
         button {
             margin: 1rem;
-            padding: .6rem 1rem;
-            
-            background: white;
-            color: var(--blue-light);
-            border: 1.2px solid var(--blue-light);
-            border-radius: .3rem;
-
-            transition: 0.2s;
-
-            &:hover {
-                background: var(--blue-light);
-                color: white;
-            }
 
             &.isActive {
-                background: var(--blue-light);
+                background: var(--main-orange);
                 color: white;
             }
         }
