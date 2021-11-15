@@ -60,8 +60,8 @@ export function HomePage() {
                 <h1>Calorie calculator</h1>
                 <hr />
                 <CalculatorContent>
-                    <div>
-                        <img src={CalculatorImage} alt="calculadora" typeof="image/jpg" width={500} />
+                    <div className="image-container">
+                        <img src={CalculatorImage} alt="calculadora" typeof="image/jpg" />
                     </div>
                     <div className="text-calculator-container">
                         <h2>

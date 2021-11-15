@@ -43,11 +43,14 @@ export const ListBeersContainer = styled.div`
 export const Pagination = styled.div`
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    align-self: center;
+    width: 90%;
+    max-width: 30rem;
 
     button {
-        margin: 1.5rem;
+        margin: 1.5rem 0;
 
         &.isActive {
             background: var(--main-orange);

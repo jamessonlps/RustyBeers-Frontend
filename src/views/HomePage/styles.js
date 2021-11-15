@@ -93,6 +93,7 @@ export const CardsSectionContent = styled.div`
     background: white;
 
     img {
+        width: 80%;
         max-width: 40rem;
         max-height: 40rem;
         align-self: center;
@@ -102,6 +103,7 @@ export const CardsSectionContent = styled.div`
         display: flex;
         flex-direction: column;
         justify-content: center;
+        align-items: center;
     }
 
     button {
@@ -165,6 +167,11 @@ export const CalculatorContent = styled.div`
 
     padding: 4rem 0 2rem 0;
 
+    img {
+        width: 80%;
+        max-width: 40rem;
+    }
+
     ul {
         list-style-type: none;
     }
@@ -180,10 +187,16 @@ export const CalculatorContent = styled.div`
     }
 
     div {
+        &.image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
         &.text-calculator-container {
             display: flex;
             flex-direction: column;
             justify-content: center;
+            width: 80%;
             max-width: 30rem;
         }
     }

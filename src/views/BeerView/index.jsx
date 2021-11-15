@@ -14,8 +14,6 @@ export function BeerView({ location }) {
     async function handleAddToFavorites(event) {
         event.preventDefault();
 
-        console.log(userData);
-
         await addToFavorites(data.id, userData.email)
             .then((res) => {
                 if (userData.email) {

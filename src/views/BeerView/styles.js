@@ -68,6 +68,7 @@ export const DetailsContainer = styled.div`
 
     div {
         display: flex;
+        flex-wrap: wrap;
         
         button {
             margin: 1rem;

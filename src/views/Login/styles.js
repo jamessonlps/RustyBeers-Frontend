@@ -23,7 +23,8 @@ export const Container = styled.div`
 export const FormContainer = styled.form`
   display: flex;
   flex-direction: column;
-  width: 30rem;
+  max-width: 30rem;
+  width: 80%;
 
   padding: 2rem;
 

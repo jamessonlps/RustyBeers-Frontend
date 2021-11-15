@@ -15,7 +15,8 @@ export const FormCalculator = styled.form`
   justify-content: center;
   align-self: center;
 
-  width: 25rem;
+  width: 80%;
+  max-width: 35rem;
   margin-top: 3rem;
   padding: 2rem;
 
