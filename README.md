@@ -1,70 +1,37 @@
-# Getting Started with Create React App
+# Rusty Beers - Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Instalação e utilização
 
-## Available Scripts
+Com o ``Node.js`` instalado na sua máquina, se certifique de que tem o `yarn` previamente instalado:
 
-In the project directory, you can run:
+```
+npm install -g yarn
+```
 
-### `yarn start`
+Após isso, no diretório mais externo do projeto, instale as dependências executando:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```
+yarn install
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+E depois execute o comando abaixo para rodar a aplicação localmente:
 
-### `yarn test`
+```
+yarn start
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Funcionalidades
 
-### `yarn build`
+![Rusty Beers](https://github.com/jamessonlps/RustyBeers-Frontend/blob/master/rustybeers.gif)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+[Rusty Beers](https://topbeers.herokuapp.com/)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+O site utiliza uma [API](https://rustybeers.com/) que contém uma série de bebidas com inúmeras informações técnicas para exibí-las, com opção de adicionar como favoritas aos usuários logados (Ao criar uma conta, use informações aleatórias, pois não há esquemas de segurança no login, é apenas para demonstração).
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Também há opção de buscar bebidas com alguns filtros como nome e alguns ingredientes.
 
-### `yarn eject`
+## Sobre o desenvolvimento
+- **Ivan de Alcântara Barabosa Barros**
+- **Jamesson Leandro Paiva Santos**
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Desenvolvido para o **Projeto 2** da disciplina de **Tecnologias Web**, do 4° semestre do **Insper**.
