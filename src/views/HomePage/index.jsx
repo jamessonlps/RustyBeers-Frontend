@@ -4,7 +4,6 @@ import BackgroundImage from '../../assets/background.jpg';
 import CalculatorImage from '../../assets/cerveja-calculadora.jpg';
 import BeersImage from '../../assets/beers.jpg';
 
-import { optionsListHome } from '../../data/Descriptions';
 import { Link } from 'react-router-dom';
 
 export function HomePage() {
@@ -21,8 +20,8 @@ export function HomePage() {
                 </HeaderContent>
             </section>
 
-            <CardsSectionContainer>
-                <h1 id="start">Our content</h1>
+            <CardsSectionContainer id="start">
+                <h1>Our content</h1>
                 <hr />
                 <CardsSectionContent>
                     <div>
@@ -66,15 +65,14 @@ export function HomePage() {
                     </div>
                     <div className="text-calculator-container">
                         <h2>
-                            A melhor ferramenta para ajudar você no seu bar ou na sua indústria:
+                            The best tool to help you in your bar or in your industry:
                         </h2>
                         <ul>
-                            <li>&#127867; Calcular álcool por volume</li>
-                            <li>&#127867; Calcular gravidade final</li>
-                            <li>&#127867; Calcular número de garrafas</li>
+                            <li>&#127867; Calculate alcohol by volume</li>
+                            <li>&#127867; Calculate beer Calories</li>
                         </ul>
 
-                        <button>Calcular agora</button>
+                        <Link to="/calculator">Open calculator</Link>
                     </div>
                 </CalculatorContent>
             </CalculatorSectionContainer>

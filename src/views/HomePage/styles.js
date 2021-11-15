@@ -163,8 +163,6 @@ export const CalculatorContent = styled.div`
     justify-content: space-evenly;
     flex-wrap: wrap;
 
-    /* background: white; */
-
     padding: 4rem 0 2rem 0;
 
     ul {
@@ -174,6 +172,11 @@ export const CalculatorContent = styled.div`
     li {
         font-size: 1.2rem;
         margin-top: 1.2rem;
+        color: var(--text-body)
+    }
+
+    h2 {
+        color: var(--main-orange);
     }
 
     div {
@@ -182,6 +185,29 @@ export const CalculatorContent = styled.div`
             flex-direction: column;
             justify-content: center;
             max-width: 30rem;
+        }
+    }
+
+    a {
+        text-decoration: none;
+        text-align: center;
+
+        font-size: 1rem;
+        font-weight: 600;
+        background: white;
+        border: 1px solid var(--main-orange);
+        border-radius: 0.3rem;
+        color: var(--main-orange);
+
+        margin-top: 1rem;
+        padding: 0.5rem 1.5rem;
+
+        transition: 0.2s;
+
+        &:hover {
+            background: var(--main-orange);
+            color: white;
+            cursor: pointer;
         }
     }
 `

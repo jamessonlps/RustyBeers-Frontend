@@ -1,19 +1,18 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useUser } from '../../hooks/useContextUser';
 import { DetailsTable } from "../../components/DetailsTable";
 import { addToFavorites } from "../../services/api";
 import { Container, DetailsContainer, ImageTitleContainer } from "./styles";
+import DefaultImage from '../../assets/default.png';
 
 export function BeerView({ location }) {
     const data = location.state;
     const [optionToView, setOptionToView] = useState(0);
-    const [loading, setLoading] = useState(false);
 
-    const { userData, setUserData, logged } = useUser();
+    const { userData } = useUser();
 
     async function handleAddToFavorites(event) {
         event.preventDefault();
-        setLoading(true);
 
         console.log(userData);
 
@@ -34,7 +33,7 @@ export function BeerView({ location }) {
     return (
         <Container>
             <ImageTitleContainer>
-                <img src={data.image_url} width="128px" />
+                <img src={data.image_url || DefaultImage} width="128px" />
                 <div>
                     <h1>{data.name}</h1>
                     <hr width="90%" />

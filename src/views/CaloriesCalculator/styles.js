@@ -3,6 +3,9 @@ import styled from "styled-components";
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
+
+  height: 80vh;
   width: 100%;
 `
 
@@ -12,7 +15,7 @@ export const FormCalculator = styled.form`
   justify-content: center;
   align-self: center;
 
-  width: 30rem;
+  width: 25rem;
   margin-top: 3rem;
   padding: 2rem;
 
@@ -37,6 +40,10 @@ export const FormCalculator = styled.form`
     
     padding: 0.8rem;
     margin: 1rem 0;
+  }
+
+  span {
+    color: var(--text-body);
   }
 
   button {

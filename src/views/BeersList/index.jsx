@@ -4,6 +4,7 @@ import { CardBeer } from "../../components/CardBeer";
 import { Loading } from '../../components/Loading/index';
 
 import { getAllBeers } from "../../services/api";
+import { Link } from "react-router-dom";
 
 export function BeersList() {
     const [beersList, setBeersList] = useState([]);
@@ -32,6 +33,7 @@ export function BeersList() {
     else {
         return (
             <Container>
+                <Link to="/beers/filter">Advanced search</Link>
                 <ListBeersContainer>
                     {beersList.map(item => {return (
                         <CardBeer info={item} />

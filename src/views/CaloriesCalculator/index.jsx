@@ -9,7 +9,6 @@ export function CaloriesCalculator() {
 
   function handleCalculateCalories(event) {
     event.preventDefault();
-    alert("Calculando...");
 
     var abv = ((og - fg) * 131.25);
 
@@ -30,7 +29,6 @@ export function CaloriesCalculator() {
         <input 
           min={0}
           type="number"
-          value={og}
           onChange={event => setOg(event.target.value)}
         />
 
@@ -38,7 +36,6 @@ export function CaloriesCalculator() {
         <input 
           min={0}
           type="number"
-          value={fg}
           onChange={event => setFg(event.target.value)}
         />
 
@@ -49,10 +46,10 @@ export function CaloriesCalculator() {
         </button>
 
         <div>
-          <span>Calculated ABV <b>{Math.round(abv * 100) / 100}</b>%</span>
+          <span>Calculated ABV: <b>{Math.round(abv * 100) / 100}</b>%</span>
         </div>
         <div>
-          <span>Calculated Calories <b>{Math.round(calories * 100) / 100}</b> per 12oz bottle</span>
+          <span>Calculated Calories: <b>{Math.round(calories * 100) / 100}</b> per 12oz bottle</span>
         </div>
       </FormCalculator>
     </Container>

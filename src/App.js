@@ -9,6 +9,7 @@ import { BeerView } from './views/BeerView';
 import { RegisterUser } from './views/RegisterUser';
 import { UserFavorites } from './views/UserFavorites';
 import { CaloriesCalculator } from './views/CaloriesCalculator';
+import { FiltersSearch } from './views/FiltersSearch/index';
 
 import { useUser } from './hooks/useContextUser';
 import { GlobalStyle } from './styles/global';
@@ -38,6 +39,7 @@ function App() {
         <Route exact path = "/register" component={RegisterUser} />
         <Route exact path = "/favorites" component={UserFavorites} />
         <Route exact path = "/calculator" component={CaloriesCalculator} />
+        <Route exact path = "/beers/filter" component={FiltersSearch} />
         <Route exact path = "/beers" component={BeersList} />
         <Route path = "/beers/:id" component={BeerView} />
       </Switch>

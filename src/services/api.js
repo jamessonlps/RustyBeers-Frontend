@@ -135,3 +135,19 @@ export async function removeFromFavorites(beer_id, email) {
 
   return response;
 }
+
+export async function getBeersFilter(option, search) {
+  let stringName = search.replace(/\s/g, '_').toLowerCase();
+  let response = await axios({
+    method: 'get',
+    url: `https://api.punkapi.com/v2/beers?${option}=${stringName}`,
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+    }
+  })
+  .then((res) => res.data)
+  .catch((err) => err.message);
+
+  return response;
+}
