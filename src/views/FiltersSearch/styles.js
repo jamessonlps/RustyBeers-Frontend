@@ -9,6 +9,7 @@ export const Container = styled.div`
     color: var(--main-red);
     font-size: 2rem;
     align-self: center;
+    margin-top: 1.5rem;
   }
 `
 

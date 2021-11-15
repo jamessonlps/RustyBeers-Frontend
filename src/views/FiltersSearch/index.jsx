@@ -49,12 +49,12 @@ export function FiltersSearch() {
         </select>
 
         <input 
-          placeholder="Type your search..."
+          placeholder="Enter your search..."
           type="text" 
           onChange={event => setSearch(event.target.value)} 
         />
 
-        <button type="submit" onClick={handleSearch} >Pesquisar</button>
+        <button type="submit" onClick={handleSearch} >Search</button>
       </InputContainer>
 
       <BeersContainer>
