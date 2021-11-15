@@ -40,7 +40,7 @@ export async function getBeersByIds(ids_list) {
 export async function loggin(email, password) {
   let response = axios({
     method: 'post',
-    url: 'http://localhost:8000/api/auth/',
+    url: 'https://rustybeers.herokuapp.com/api/auth/',
     data: {
       'email': email,
       'password': password
@@ -59,7 +59,7 @@ export async function loggin(email, password) {
 export async function register(name, lastname, email, password) {
   let response = await axios({
     method: 'post',
-    url: 'http://localhost:8000/api/auth/register/',
+    url: 'https://rustybeers.herokuapp.com/api/auth/register/',
     data: {
       'name': name,
       'lastname': lastname,
@@ -80,7 +80,7 @@ export async function register(name, lastname, email, password) {
 export async function getFavoritesBeers(email) {
   let response = await axios({
     method: 'post',
-    url: 'http://localhost:8000/api/get/favorite/',
+    url: 'https://rustybeers.herokuapp.com/api/get/favorite/',
     data: {
       'email': email
     },
@@ -98,7 +98,7 @@ export async function getFavoritesBeers(email) {
 export async function addToFavorites(beer_id, email) {
   let response = await axios({
     method: 'post',
-    url: 'http://localhost:8000/api/add/favorite/',
+    url: 'https://rustybeers.herokuapp.com/api/add/favorite/',
     data: {
       'email': email,
       'beer_id': beer_id
@@ -120,7 +120,7 @@ export async function removeFromFavorites(beer_id, email) {
   */
   let response = await axios({
     method: 'post',
-    url: 'http://localhost:8000/api/remove/favorite/',
+    url: 'https://rustybeers.herokuapp.com/api/remove/favorite/',
     data: {
       'email': email,
       'beer_id': beer_id
