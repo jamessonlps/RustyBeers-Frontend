@@ -26,7 +26,7 @@ yarn start
 
 [Rusty Beers](https://topbeers.herokuapp.com/)
 
-O site utiliza uma [API](https://rustybeers.com/) que contém uma série de bebidas com inúmeras informações técnicas para exibí-las, com opção de adicionar como favoritas aos usuários logados (Ao criar uma conta, use informações aleatórias, pois não há esquemas de segurança no login, é apenas para demonstração).
+O site utiliza uma [API](https://punkapi.com/) que contém uma série de bebidas com inúmeras informações técnicas para exibí-las, com opção de adicionar como favoritas aos usuários logados (Ao criar uma conta, use informações aleatórias, pois não há esquemas de segurança no login, é apenas para demonstração).
 
 Também há opção de buscar bebidas com alguns filtros como nome e alguns ingredientes.
 
