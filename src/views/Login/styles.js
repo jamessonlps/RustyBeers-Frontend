@@ -24,7 +24,7 @@ export const FormContainer = styled.form`
   display: flex;
   flex-direction: column;
   max-width: 30rem;
-  width: 80%;
+  width: 90%;
 
   padding: 2rem;
 

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { CardBeer } from "../../components/CardBeer";
-import { Loading } from "../../components/Loading";
+import LoadingImage from '../../assets/loading.gif';
 import { getBeersFilter } from "../../services/api";
 import { BeersContainer, Container, InputContainer } from "./styles";
 
@@ -59,7 +59,7 @@ export function FiltersSearch() {
 
       <BeersContainer>
         {msg ? <h3>{msg}</h3> : null}
-        {loading ? <Loading/> : null}
+        {loading ? <img src={LoadingImage} style={{marginTop: '1.5rem'}} alt="loading"/> : null}
         {beers ? beers.map((item) => <CardBeer info={item} />) : null}
       </BeersContainer>
     </Container>

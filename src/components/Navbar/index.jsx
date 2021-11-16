@@ -22,7 +22,11 @@ export function Navbar() {
     return (
         <NavContainer>
             <Link className="logo-div" to="/" style={LinkStyle}>
-                <img src={LogoIamge} alt="logo" />
+                {window.screen.width > 520 ? (
+                    <img src={LogoIamge} alt="logo" />
+                ) : (
+                    null
+                )}
                 <p>Rusty Beers</p>
             </Link>
             <Link to="/beers" style={LinkStyle}>Beers</Link>
@@ -31,7 +35,7 @@ export function Navbar() {
             {logged ? (<Link style={LinkStyle} to="/favorites">Favorites</Link>) : null}
 
             {logged ? (
-                <a onClick={loggout}>Loggout</a>
+                <a onClick={loggout}>Logout</a>
             ) 
             : (
                 <Link to="/login" style={LinkStyle}>Sign-In</Link>

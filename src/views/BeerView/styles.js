@@ -3,7 +3,8 @@ import styled from "styled-components";
 export const Container = styled.div`
     display: flex;
     flex-direction: column;
-    width: 80%;
+    width: 90%;
+    max-width: 80rem;
     margin: 0 auto;
 `
 
@@ -24,7 +25,7 @@ export const ImageTitleContainer = styled.div`
         display: flex;
         flex-direction: column;
         justify-content: center;
-        width: 70%;
+        width: 80%;
     }
 
     h1 {
