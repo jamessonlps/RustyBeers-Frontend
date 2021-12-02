@@ -151,3 +151,37 @@ export async function getBeersFilter(option, search) {
 
   return response;
 }
+
+export async function sendGetProva() {
+
+  let response = await axios({
+    method: 'get',
+    url: `https://enigmatic-bayou-56424.herokuapp.com/ivanabb2/token`,
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+    }
+  })
+  .then((res) => res.data.token)
+  .catch((err) => err.message);
+
+  return response;
+}
+  
+export async function sendPostProva(tokenRecebidom) {
+
+  let response = await axios({
+    method: 'post',
+    url: `https://enigmatic-bayou-56424.herokuapp.com/ivanabb2/message`,
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+    },
+    data: {token: `${tokenRecebidom}`}
+  })
+  .then((res) => res.data.mensagem)
+  .catch((err) => err.message);
+
+  return response;
+  
+}

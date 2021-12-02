@@ -1,16 +1,36 @@
 import { Container, CardsSectionContainer, CalculatorContainer, HeaderContent, CardsSectionContent, Card, CalculatorSectionContainer, CalculatorContent } from './styles';
+import { useState } from "react";
 
 import BackgroundImage from '../../assets/background.jpg';
 import CalculatorImage from '../../assets/cerveja-calculadora.jpg';
+import { sendGetProva } from "../../services/api";
+import { sendPostProva } from "../../services/api";
 import BeersImage from '../../assets/beers.jpg';
 
 import { Link } from 'react-router-dom';
 
 export function HomePage() {
+    const [Mensagem, setMensagem] = useState(0);
+
+    async function handleProva(event) {
+        event.preventDefault();
+
+        let token = await sendGetProva();
+
+        var Mensagem = await sendPostProva(token);
+
+        setMensagem(Mensagem);
+    }
+
     return (
         <Container>
             <section style={MainTitle}>
                 <HeaderContent>
+                    <a>{ Mensagem ? <p>{Mensagem}</p> : null }</a>
+                    <button 
+                        type="submit" 
+                        onClick={handleProva}>Exhibit Special Message
+                    </button>
                     <h2>
                         The largest and most complete collection of beer styles on the 
                         Internet, with technical information for your business and 
